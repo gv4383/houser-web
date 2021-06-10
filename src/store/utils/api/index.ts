@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { ApiHouse, House } from '../../reducers/house/types';
 
 import { baseUrl, getHeaders } from './config';
 
-const API = {
+export const API = {
   get: (endpoint: string) =>
     axios(`${baseUrl}${endpoint}`, {
       method: 'GET',
@@ -33,4 +34,26 @@ const API = {
     }).then((res: any) => res),
 };
 
-export default API;
+export const formatFetchedHouse = (house: ApiHouse): House => {
+  const { id, name, address, city, state, zipcode, image_url, monthly_mortgage, monthly_rent } =
+    house;
+  const formattedHouse = {
+    id,
+    name,
+    address,
+    city,
+    state,
+    zipcode,
+    imageUrl: image_url,
+    monthlyMortgage: monthly_mortgage,
+    monthlyRent: monthly_rent,
+  };
+
+  return formattedHouse;
+};
+
+export const formatFetchedHouses = (houses: ApiHouse[]): House[] => {
+  const formattedHouses = houses.map((house: ApiHouse) => formatFetchedHouse(house));
+
+  return formattedHouses;
+};
