@@ -1,0 +1,25 @@
+@import '../../variables';
+
+.header-container {
+  background-color: $green-two;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.header-sub-container {
+  align-items: center;
+  display: flex;
+  padding-left: 16px;
+  text-align: left;
+}
+
+.header-logo {
+  height: 48px;
+  margin-right: 24px;
+  width: 48px;
+}
+
+.header-title {
+  color: white;
+}
