@@ -13,7 +13,7 @@ const Dashboard = () => {
     dispatch(getHouses());
   }, [dispatch]);
 
-  return <DashboardPresenter />;
+  return <DashboardPresenter houses={houses} />;
 };
 
 export default Dashboard;
