@@ -11,12 +11,14 @@ import './App.scss';
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="app-container">
         <HashRouter>
           <header>
             <Header />
           </header>
-          <Routes />
+          <div className="app-sub-container">
+            <Routes />
+          </div>
         </HashRouter>
       </div>
     </Provider>
