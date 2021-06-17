@@ -1,5 +1,6 @@
 import React from 'react';
 
+import deleteButton from '../../assets/delete_button.png';
 import { House } from '../../store/reducers/house/types';
 
 import './styles.scss';
@@ -13,6 +14,7 @@ const HouseCard = ({ house }: Props) => {
 
   return (
     <div className="house-card-container">
+      <img className="delete-button" src={deleteButton} alt="Delete" />
       <p>Property Name: {name}</p>
       <p>Address: {address}</p>
       <p>City: {city}</p>
