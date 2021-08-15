@@ -1,8 +1,10 @@
 import React from 'react';
 
 import HouseCard from '../../components/HouseCard';
-import Button from '../../components/Input/Button';
+import TitleBar from '../../components/TitleBar';
+import { BUTTON_TEXT_SIZE, COLORS, TEXT_SIZE } from '../../constants';
 import { House } from '../../store/reducers/house/types';
+import { TEXT } from './constants';
 
 interface Props {
   houses: House[] | null;
@@ -14,12 +16,15 @@ const DashboardPresenter = ({ houses }: Props) => {
 
   return (
     <div className="dashboard-container">
-      <div>
-        <div className="dashboard-title">Dashboard</div>
-        <Button color="green" textSize="lg">
-          Add New Property
-        </Button>
-      </div>
+      <TitleBar
+        buttonBold
+        buttonColor={COLORS.GREEN}
+        buttonText={TEXT.ADD_NEW_PROPERTY}
+        buttonTextSize={BUTTON_TEXT_SIZE.MEDIUM}
+        hasDivider
+        title={TEXT.DASHBOARD}
+        titleSize={TEXT_SIZE.LARGE}
+      />
       <div>{displayHouses()}</div>
     </div>
   );

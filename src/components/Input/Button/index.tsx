@@ -5,8 +5,8 @@ import './styles.scss';
 interface Props {
   bold?: boolean;
   children: string;
-  color: 'dark' | 'green' | 'red';
-  textSize: 'sm' | 'md' | 'lg';
+  color: string;
+  textSize: string;
 }
 
 const Button = ({ bold, children, color, textSize }: Props) => {
@@ -19,7 +19,6 @@ const Button = ({ bold, children, color, textSize }: Props) => {
 
     return classNamesArr.join(' ');
   };
-  console.log('CLASS NAMES:', getClassNames());
 
   return <button className={getClassNames()}>{children}</button>;
 };

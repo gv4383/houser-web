@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.titlebar-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.titlebar-container-divider {
+  border-bottom: 2px solid black;
+}
+
+.title-text-bold {
+  font-weight: bold;
+}
+
+.title-text-sm {
+  font-size: $text-small;
+}
+
+.title-text-md {
+  font-size: $text-medium;
+}
+
+.title-text-lg {
+  font-size: $text-large;
+}
