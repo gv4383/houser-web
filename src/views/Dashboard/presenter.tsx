@@ -6,6 +6,8 @@ import { BUTTON_TEXT_SIZE, COLORS, TEXT_SIZE } from '../../constants';
 import { House } from '../../store/reducers/house/types';
 import { TEXT } from './constants';
 
+import './styles.scss';
+
 interface Props {
   houses: House[] | null;
 }
@@ -25,6 +27,7 @@ const DashboardPresenter = ({ houses }: Props) => {
         title={TEXT.DASHBOARD}
         titleSize={TEXT_SIZE.LARGE}
       />
+      <div className="dashboard-sub-title">{TEXT.HOUSE_LISTINGS}</div>
       <div>{displayHouses()}</div>
     </div>
   );
