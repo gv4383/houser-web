@@ -8,6 +8,7 @@ import './styles.scss';
 interface Props {
   buttonBold?: boolean;
   buttonColor: string;
+  buttonOnClick: () => void;
   buttonText: string;
   buttonTextSize: string;
   hasDivider?: boolean;
@@ -20,6 +21,7 @@ const TitleBar = (props: Props) => {
   const {
     buttonBold,
     buttonColor,
+    buttonOnClick,
     buttonText,
     buttonTextSize,
     hasDivider,
@@ -63,7 +65,12 @@ const TitleBar = (props: Props) => {
   return (
     <div className={getContainerClassNames()}>
       <div className={getTitleClassNames()}>{title}</div>
-      <Button bold={buttonBold} color={buttonColor} textSize={buttonTextSize}>
+      <Button
+        bold={buttonBold}
+        color={buttonColor}
+        onClick={buttonOnClick}
+        textSize={buttonTextSize}
+      >
         {buttonText}
       </Button>
     </div>

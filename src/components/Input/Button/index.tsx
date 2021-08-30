@@ -6,10 +6,11 @@ interface Props {
   bold?: boolean;
   children: string;
   color: string;
+  onClick: () => void;
   textSize: string;
 }
 
-const Button = ({ bold, children, color, textSize }: Props) => {
+const Button = ({ bold, children, color, onClick, textSize }: Props) => {
   const getClassNames = () => {
     const classNamesArr = ['button-container', `button-text-${textSize}`, `button-color-${color}`];
 
@@ -20,7 +21,11 @@ const Button = ({ bold, children, color, textSize }: Props) => {
     return classNamesArr.join(' ');
   };
 
-  return <button className={getClassNames()}>{children}</button>;
+  return (
+    <button className={getClassNames()} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
